@@ -1,0 +1,17 @@
+<div class="container">
+  <form (ngSubmit)="login()">
+    <div class="mb-3">
+      <label for="userName" class="form-label">Benutzername</label>
+      <input type="text" [(ngModel)]="user.username" class="form-control" id="username" name="username">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" [(ngModel)]="user.password" class="form-control" id="password" name="password">
+    </div>
+    <div class="d-grid gap-2">
+      <button class="btn btn-outline-secondary" type="submit" color="primary" >Anmelden</button>
+    </div>
+    <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+    <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+  </form>
+</div>
